@@ -1,47 +1,6 @@
 # PiRowFlo for Waterrower
 
 
-03.03.2022: SmartRow version 3.0 is now working. Thanks to Dan !!
-14.11.2021: fixed pip install issue with pyusb in requirements.txt
-
-<img src="docs/logo/PIROWFLO2.png" width=36% height=36%>
-
----- 
-
-<img src="docs/Hardware/IMG_20210104_155432.jpg" width=36% height=36%> <img src="docs/Hardware/Selection_015.png" width=30% height=30%> <img src="docs/Hardware/SmartRow.png" width=30% height=30%>
-
-
-<img src="docs/Screen/screenPiRowFlo.gif" width=36% height=36%>
-
-Read the LICENCE first, by using this software you agree to the licence. 
-
-
-## News 13.02.2021 
-
-- Case is still in Prototype stage 
-
-
-## Supported Apps S4 Monitor (23.02.2021)
-
-|        | Kinomap (BLE) | Cityrowgo (BLE)      | waterrower connect (BLE)   | Coxswain (BLE) 7.9 or higher | Holofit| 
-|:------:|:------:       |:------------:      |:-----:                     |:-------:                     |:-------:     
-|Android | test pending  | :heavy_check_mark: | devs need to update app                  | :heavy_check_mark:           |  :heavy_check_mark:           |
-|iOS     | :heavy_check_mark:  | :heavy_check_mark: | :heavy_check_mark:         |  -                           | :heavy_check_mark:           |
-
-## Supported Apps SmartRow (23.02.2021)
-
-|        | Kinomap (BLE) | Cityrowgo (BLE)      | waterrower connect (BLE)   | Coxswain (BLE) 7.9 or higher |Holofit | 
-|:------:|:------:       |:------------:      |:-----:                     |:-------:                     |:-------:  |
-|Android | test pending  | test pending | devs need to update app                   | :heavy_check_mark:           |  :heavy_check_mark:           |
-|iOS     | :heavy_check_mark: | :heavy_check_mark:   | :heavy_check_mark:         |  -                           | :heavy_check_mark:           |
-
-
-## Supported Watches (14.01.2021)
-
-|   Watch model     |  Navtive rowing App  | ErgIQ|
-|:------:|:------: |:------: |
-| Fenix 6 | :heavy_check_mark:  | currently not|
-
 
 ## Project Overview
 
@@ -50,84 +9,21 @@ Read the LICENCE first, by using this software you agree to the licence.
 ## Features
 
 - Read Serial Waterrower Data to the Pi
-- Read SmartRow data to the Pi via bluetooth (for pi 3,4 and Zero W internal bluetooth + USB Bluetooth dongle needed - 
-  for pi 1,2,3 without internal bluetooth 2 USB bluetooth dongle from different brands are needed)
-- Send Waterrower Data from the Pi over Bluetooth (Build-in or USB-dongle) 
-- Send Waterrower Data from the Pi over Ant+ via Ant+ dongle 
+- Send Waterrower Data from the Pi to MQTT
 
 
 
 ## Motivation
 
-I wanted to have the ability to use the Android App Coxswain and also my Garmin smartwatch. Therefore, I though
-why not connect the Waterrower via USB to a Raspberry pi and let the Raspberry pi being a BLE and Ant+ transmitter. 
-And wouldn't be even better if it could be control for the Webbrowser. And Last but not least, have at the 
-end of the training a FIT file for Garmin connect or Strava.
-
-With a high demand from people having the Smartrow, I thought why not trying to integrate it as input interface 
-for this project. So it would be either S4 Monitor or Smartrow 
 
 ## Target of the project 
 
-<img src="docs/Project-overview.png" width=100% height=100%>
+
 
 ## Requirements
 
 ### Hardware 
 
-Bill of Material(BOM)
-
-<img src="docs/Hardware/IMG_20210104_155452.jpg" width=50% height=50%>
-
-| **Item for Raspberry pi 1,2,3**| 
-|------|
-| Raspberry Pi || 
-| Micro SD card || 
-| Mini USB to USB typ A ||  
-| Bluetooth USB dongle (not 5.0) (LogiLink BT0015) || 
-| Micro USB to Typ A || 
-| 5V USB power supply 2A ||
-| **for Ant+ addition** || 
-| Ant+ dongle (avoid CYCPLUS) ||
-| **for Smartrow** || 
-| Bluetooth USB dongle (not 5.0) (LogiLink BT0015) || 
-| Bluetooth USB dongle (not 5.0) (Mandatory to be different brand)
-
-| **Item for Raspberry pi 3,4**| 
-|------|
-| Raspberry Pi || 
-| Micro SD card || 
-| Mini USB to USB typ A ||
-| 5V USB power supply 2A ||
-| **for Ant+ addition** || 
-| Ant+ dongle (avoid CYCPLUS) ||
-| **for Smartrow** || 
-| Bluetooth USB dongle (not 5.0) (LogiLink BT0015) || 
-| ~~Bluetooth USB dongle (not 5.0) (Mandatory to be different brand)~~
-
-
-
-<img src="docs/Hardware/IMG_20210104_155756.jpg" width=50% height=50%>
-
-| **Item for Raspberry pi Zero W** | 
-|------|
-| Raspberry Pi Zero W || 
-| Micro SD card || 
-| Mini USB to Micro USB || 
-| 5V USB power supply 2A ||
-| **for Ant+ addition**  || 
-| Ant+ dongle (avoid CYCPLUSe) ||
-| Micro USB to USB Hub || 
-| **for Smartrow** || 
-| Bluetooth USB dongle (not 5.0) (LogiLink BT0015) || 
-| ~~Bluetooth USB dongle (not 5.0) (Mandatory to be different brand)~~
-
-
-<img src="docs/Hardware/IMG_20210104_155825.jpg" width=50% height=50%>
-
-
-
-I would recommend buying the Raspberry pi in a kit where most of the parts are included 
 
 ### Software 
 
