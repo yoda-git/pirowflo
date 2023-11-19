@@ -17,7 +17,7 @@ def updatePiRowFlo():
     updatefinaldest = BASE_DIR
     #updatefinaldest = "/home/pi/test"
 
-    response = requests.get("https://api.github.com/repos/inonoob/pirowflo/releases/latest")
+    response = requests.get("https://api.github.com/repos/yoda-git/pirowflo/releases/latest")
     Version = response.json()["name"]
     print(" ")
     print("========== Getting newest {0} of PiRowFlo from Github ==========".format(Version))
@@ -26,7 +26,7 @@ def updatePiRowFlo():
     if os.path.exists(updatetmpfolder):
         shutil.rmtree(updatetmpfolder)
     os.makedirs(updatetmpfolder)
-    response = requests.get("https://api.github.com/repos/inonoob/pirowflo/releases/latest")
+    response = requests.get("https://api.github.com/repos/yoda-git/pirowflo/releases/latest")
     resp = response.json()["tarball_url"]
     Version = response.json()["name"]
     response2 = requests.get(resp, stream=True)
@@ -47,7 +47,7 @@ def updatePiRowFlo():
     print("========== Copy newest release of PiRowFlo to target folder ========")
     print(" ")
 
-    pirowfloupdatefolder = glob.glob(updatetmpfolder + "/inonoob-pirowflo-*")
+    pirowfloupdatefolder = glob.glob(updatetmpfolder + "/yoda-git-pirowflo-*")
     if os.path.exists(updatefinaldest):
         shutil.rmtree(updatefinaldest)
 

@@ -6,3 +6,4 @@ pyusb == 1.2.0
 gatt == 0.2.7
 supervisor == 4.2.1
 luma.oled == 3.8.1
+paho-mqtt == 1.6.1

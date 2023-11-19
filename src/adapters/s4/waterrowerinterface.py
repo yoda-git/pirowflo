@@ -12,6 +12,9 @@ import time
 import serial
 import serial.tools.list_ports
 
+import paho.mqtt.client as mqtt
+
+
 logger = logging.getLogger(__name__)
 
 MEMORY_MAP = {'055': {'type': 'total_distance_m', 'size': 'double', 'base': 16},
@@ -317,6 +320,24 @@ class Rower(object):
     def notify_callbacks(self, event):
         for cb in self._callbacks:
             cb(event)
+    def __init__(self, options=None):
+        # ... existing initialization code ...
+        self.mqtt_client = mqtt.Client()
+        self.mqtt_client.tls_set(ca_certs="path/to/ca.crt", certfile="path/to/client.crt",
+                                 keyfile="path/to/client.key")
+        self.mqtt_client.connect("mqtt_broker_address", 8883, 60)  # Note the port change for SSL/TLS
+        self.mqtt_topic = "waterrower/data"
+    def __init__(self, options=None):
+        # ... existing initialization code ...
+        self.mqtt_client = mqtt.Client()
+        # Setup for SSL/TLS and connect (as shown in the previous snippet)
+        # Start a separate thread for MQTT operations
+        self.mqtt_thread = threading.Thread(target=self.run_mqtt)
+        self.mqtt_thread.daemon = True
+        self.mqtt_thread.start()
+
+    def run_mqtt(self):
+        self.mqtt_client.loop_forever()
 
 
 
