@@ -41,7 +41,7 @@ echo "----------------------------------------------"
 echo "install needed python3 modules for the project        "
 echo "----------------------------------------------"
 echo " "
-
+python -m venv env
 sudo pip3 install -r requirements.txt
 
 echo " "
